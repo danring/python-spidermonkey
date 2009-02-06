@@ -383,7 +383,7 @@ cdef extern from "jshelpers.c":
 cdef void* xmalloc(size_t size) except NULL:
     cdef void* mem
     mem = malloc(size)
-    if <int>mem == 0:
+    if mem == <void*>0:
         raise MemoryError()
     return mem
 
